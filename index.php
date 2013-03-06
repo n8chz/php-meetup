@@ -80,15 +80,15 @@ else {
 ABOVE_GRID;
 
  echo "<table><thead><tr>";
- foreach (array("", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday") as $day) {
-  echo "<th>$day</th>";
+ foreach ($days = array("time", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday") as $day) {
+  echo "<th id=\"$day\">$day</th>";
  }
  echo "</tr></thead>\n";
  for ($hour = 8; $hour < 22; $hour++) {
   echo "<tr>";
-  echo "<td>" . ($hour > 12 ? $hour-12 : $hour) . ($hour >= 12 ? "p" : "a") . "</td>";
+  echo "<th headers=\"time\">" . ($hour > 12 ? $hour-12 : $hour) . ($hour >= 12 ? "p" : "a") . "</th>";
   for ($day = 0; $day < 7; $day++) {
-   echo "<td><input type=\"checkbox\" name=\"";
+   echo "<td headers=\"" . $days[$day] . "\"><input type=\"checkbox\" name=\"";
    echo 24*$day+$hour;
    echo "\" /></td>";
   }
