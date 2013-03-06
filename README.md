@@ -8,3 +8,5 @@ In response to the query at http://meetup.phpdetroit.com/boards/view/viewthread?
 It should be possible to find a table mapping zip codes to approximate values for latitude and longitude.
 
 Given that, the 'centroid' of given zip codes should serve as a tentative consensus location.
+
+The server side has not (yet) been fleshed out.
